@@ -1,0 +1,138 @@
+<!doctype>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f4ec" />
+    <title>Lexi — Learn English</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="Lexi home">
+          <span class="brand-mark">L</span>
+          <span>lexi</span>
+        </a>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="learn">
+            <span class="nav-icon">⌂</span><span>Learn</span>
+          </button>
+          <button class="nav-item" data-view="practice">
+            <span class="nav-icon">◫</span><span>Practice</span>
+          </button>
+          <button class="nav-item" data-view="progress">
+            <span class="nav-icon">↗</span><span>Progress</span>
+          </button>
+        </nav>
+
+        <div class="streak-card">
+          <div class="streak-fire">✦</div>
+          <div><strong id="sidebar-streak">7 day streak</strong><span>Keep it going!</span></div>
+        </div>
+
+        <button class="profile" id="profile-button" aria-label="Open profile">
+          <span class="avatar">M</span>
+          <span><strong>My profile</strong><small>Level 3</small></span>
+          <span class="chevron">›</span>
+        </button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <button class="menu-button" id="menu-button" aria-label="Open menu">☰</button>
+          <div class="search"><span>⌕</span><input id="search-input" type="search" placeholder="Search lessons" /></div>
+          <div class="top-actions">
+            <button class="icon-button" id="sound-button" aria-label="Toggle sound">♪</button>
+            <button class="icon-button notification" aria-label="Notifications">♢<i></i></button>
+          </div>
+        </header>
+
+        <section class="content" id="learn-view">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">GOOD MORNING</p>
+              <h1>Ready to learn?</h1>
+            </div>
+            <div class="xp-pill"><span>✦</span><strong id="xp-count">1,240</strong> XP</div>
+          </div>
+
+          <article class="hero-card">
+            <div class="hero-copy">
+              <span class="lesson-label">TODAY'S LESSON</span>
+              <h2>Everyday<br />conversations</h2>
+              <p>Learn useful phrases for talking about your day.</p>
+              <button class="primary-button" id="continue-button">Continue learning <span>→</span></button>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+              <div class="sun"></div>
+              <div class="cloud cloud-one"></div>
+              <div class="cloud cloud-two"></div>
+              <div class="speech-bubble"><span>“</span><b>Hello!</b></div>
+              <div class="person">
+                <div class="hair"></div><div class="head"><div class="ear"></div><div class="face">• ᴗ •</div></div>
+                <div class="shirt"></div><div class="arm"></div>
+              </div>
+              <div class="plant"><i></i><i></i><i></i><b></b></div>
+            </div>
+          </article>
+
+          <div class="section-heading"><h3>Popular topics</h3><button id="see-all">See all <span>→</span></button></div>
+          <div class="topics-grid">
+            <article class="topic-card" data-topic="Travel">
+              <div class="topic-illustration travel"><span>✈</span></div>
+              <div><h4>Travel</h4><p>18 lessons</p></div>
+              <span class="topic-arrow">›</span>
+            </article>
+            <article class="topic-card" data-topic="Food">
+              <div class="topic-illustration food"><span>◒</span></div>
+              <div><h4>Food & dining</h4><p>12 lessons</p></div>
+              <span class="topic-arrow">›</span>
+            </article>
+            <article class="topic-card" data-topic="Work">
+              <div class="topic-illustration work"><span>▣</span></div>
+              <div><h4>At work</h4><p>15 lessons</p></div>
+              <span class="topic-arrow">›</span>
+            </article>
+          </div>
+
+          <div class="section-heading lower"><h3>Your weekly goal</h3><button class="edit-goal">Edit</button></div>
+          <article class="goal-card">
+            <div class="goal-ring"><svg viewBox="0 0 90 90"><circle cx="45" cy="45" r="38"/><circle id="goal-progress" cx="45" cy="45" r="38"/></svg><strong id="goal-percent">68%</strong></div>
+            <div class="goal-copy"><strong>4 of 6 lessons</strong><p>You're making great progress!</p></div>
+            <div class="week" id="week-progress">
+              <div><span class="done">✓</span><small>M</small></div><div><span class="done">✓</span><small>T</small></div><div><span class="done">✓</span><small>W</small></div><div><span class="done">✓</span><small>T</small></div><div><span class="current">•</span><small>F</small></div><div><span></span><small>S</small></div><div><span></span><small>S</small></div>
+            </div>
+          </article>
+        </section>
+
+        <section class="content hidden" id="practice-view">
+          <div class="practice-head"><p class="eyebrow">QUICK PRACTICE</p><h1>Choose the right answer</h1></div>
+          <article class="quiz-card">
+            <div class="quiz-progress"><span id="quiz-step">Question 1 of 3</span><div><i id="quiz-progress-bar"></i></div></div>
+            <p class="question" id="question-text">How do you say “goodbye” informally?</p>
+            <div class="answers" id="answers"></div>
+            <button class="primary-button" id="next-question" disabled>Check answer</button>
+          </article>
+        </section>
+
+        <section class="content hidden" id="progress-view">
+          <div class="welcome-row"><div><p class="eyebrow">YOUR JOURNEY</p><h1>Progress</h1></div></div>
+          <div class="stats-grid">
+            <article><span class="stat-icon orange">✦</span><p>Current streak</p><strong id="progress-streak">7 days</strong></article>
+            <article><span class="stat-icon blue">A</span><p>Lessons done</p><strong id="lessons-done">24</strong></article>
+            <article><span class="stat-icon green">↗</span><p>Total XP</p><strong id="progress-xp">1,240</strong></article>
+          </div>
+          <article class="activity-card"><h3>Learning activity</h3><div class="bars"><i style="height:40%"></i><i style="height:58%"></i><i style="height:48%"></i><i style="height:76%"></i><i style="height:68%"></i><i style="height:35%"></i><i style="height:20%"></i></div><div class="bar-labels"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div></article>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
